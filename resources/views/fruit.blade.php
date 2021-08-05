@@ -1,4 +1,4 @@
-@extends('template.home')
+@extends('template/home')
 @include('partials/nav')
 @section('content')
 @for ($i = count($data)-1; $i > 0; $i--)
@@ -8,13 +8,10 @@
 <div >{{$data[$i]->name}}</div>
 @endif
 
-<div>{{$data[$i]->quantité}}</div>
+<div>
+<a style ="color:purple" href="{{route('showFruit', $data[$i]->id)}}">{{$data[$i]->name}}</a>
+  </div>
 <div>{{$data[$i]->id}}</div>
 @endfor
-
-
-
-
-
 
 @endsection

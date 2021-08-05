@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Fruit;
+use App\Models\Legume;
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 
 class LegumeSeeder extends Seeder
@@ -13,6 +16,13 @@ class LegumeSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $faker = Factory::create();
+        $arr = ["salade", "artichaud", "petit-pois", "radis", "aubergine"];
+        for($i = 0; $i <count($arr); $i++ ){
+            Legume::create([
+                "name" => $arr[$i],
+                "quantité"=> $faker->randomDigitNotNull(),
+            ]);
+        }
     }
 }

@@ -11,4 +11,17 @@ class LegumeController extends Controller
         $data = Legume::all();
         return view('legume', compact('data'));
     }
+
+    public function create(){
+
+        return view('createLegume');
+    }
+    // public function store(){
+
+    //     return view('createLegume');
+    // }
+    public function show(Legume $id){
+        $membre = $id;
+        return view('showLegume', compact('membre'));
+    }
 }
